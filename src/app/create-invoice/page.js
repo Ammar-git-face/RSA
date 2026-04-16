@@ -38,7 +38,7 @@ export default function CreateInvoicePage() {
   const categories = Object.keys(grouped);
 
   useEffect(() => {
-    if (!localStorage.getItem("rsa_token")) { router.push("/"); return; }
+    if (!sessionStorage.getItem("rsa_token")) { router.push("/"); return; }
     api.getCatalogue()
       .then((d) => {
         setCatalogue(d.catalogue || []);
