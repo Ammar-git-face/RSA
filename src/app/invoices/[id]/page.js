@@ -321,7 +321,7 @@ function InvoiceDetailInner({ params }) {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (!localStorage.getItem("rsa_token")) { router.push("/"); return; }
+    if (!sessionStorage.getItem("rsa_token")) { router.push("/"); return; }
 
     Promise.all([
       // FIX: use resolvedParams.id instead of params.id

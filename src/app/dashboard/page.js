@@ -88,7 +88,7 @@ export default function DashboardPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!localStorage.getItem("rsa_token")) { router.push("/"); return; }
+    if (!sessionStorage.getItem("rsa_token")) { router.push("/"); return; }
     api.getDashboard()
       .then((d) => setStats(d.stats))
       .catch((e) => setError(e.message))

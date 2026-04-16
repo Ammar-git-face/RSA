@@ -30,7 +30,7 @@ export default function SettingsPage() {
   const [adminSaving,   setAdminSaving]   = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("rsa_token")) { router.push("/"); return; }
+    if (!sessionStorage.getItem("rsa_token")) { router.push("/"); return; }
 
     Promise.all([api.getSettings(), api.getMe()])
       .then(([settData, meData]) => {

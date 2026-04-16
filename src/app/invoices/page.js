@@ -33,7 +33,7 @@ export default function InvoicesPage() {
   }, []);
 
   useEffect(() => {
-    if (!localStorage.getItem("rsa_token")) { router.push("/"); return; }
+    if (!sessionStorage.getItem("rsa_token")) { router.push("/"); return; }
     load();
   }, []);
 
